@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo:3.6
+    restart: unless-stopped
+    volumes:
+      - mongo_configdb:/data/configdb
+      - mongo_db:/data/db
+    ports:
+      - 192.168.11.102:27017:27017
+
+volumes:
+   mongo_configdb:
+   mongo_db:
